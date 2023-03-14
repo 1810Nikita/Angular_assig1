@@ -1,0 +1,83 @@
+<h1>Add Employee</h1>
+<div class="add-employee-form m-2 p-2">
+    <form [formGroup]="addemployeeform" >
+        <div class="row">
+            <div class="col-md-6">
+                <div>Employee id</div>
+                <mat-form-field appearance="outline">
+                    <input formControlName="empid" matInput placeholder="Enter id">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <div>Name</div>
+                <mat-form-field appearance="outline">
+                    <input formControlName="name" matInput placeholder="Enter Name">
+                </mat-form-field>
+
+            </div>
+            
+            <div class="col-md-6">
+                <div>Contact number</div>
+                <mat-form-field appearance="outline">
+                    <input formControlName="contactNo" matInput placeholder="Enter Contact number">
+                </mat-form-field>
+            </div>
+            
+            <div class="col-md-6">
+                <div>Email</div>
+                <mat-form-field appearance="outline">
+                    <input formControlName="email" matInput placeholder="Enter Email">
+                </mat-form-field>
+            </div>
+
+            <!--skills-->
+            
+            <div class="col-md-6">
+                <mat-toolbar>
+                  <span>Skills:</span>
+                  <span class="example-spacer"></span>
+                  <button mat-raised-button color="primary" >Add Skill</button>
+                </mat-toolbar>
+                <div formArrayName="skills">
+                    <div class="row mt-4" >
+
+                    <div class="col-md-6">
+                      <mat-form-field appearance="outline">
+                        <input formControlName="skill" matInput placeholder="Enter skill">
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-5">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Enter experience</mat-label>
+                        <mat-select formControlName="exp">
+                          <mat-option value="1year">1year</mat-option>
+                          <mat-option value="2year">2years</mat-option>
+                          <mat-option value="3year">3years</mat-option>
+                          <mat-option value="4year">4years</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-1">
+                        <button >
+
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+
+            <!--Gender-->
+            <div class="col-md-6">
+                <div>Gender:</div>
+                <mat-radio-group formControlName="gender" aria-label="Select an option">
+                    <mat-radio-button  value="Male">Male</mat-radio-button>
+                    <mat-radio-button  value="Female">Female</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <button (click)="submit()" class="mt-4">Submit</button>
+    </form>
+
+</div>
